@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Track your blood pressure readings with this simple, privacy-focused app">
+    <meta name="theme-color" content="#f0f2f5">
+    <title>Blood Pressure Monitor</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <h1 class="underline">Blood Pressure Monitor</h1>
+        </div>
+        
+        <div class="input-section neomorphic">
+            <h2>New Reading</h2>
+            <form id="bp-form">
+                <div class="input-group">
+                    <input type="number" 
+                           id="systolic" 
+                           required 
+                           placeholder="Systolic"
+                           inputmode="numeric" 
+                           pattern="[0-9]*"
+                           min="0"
+                           max="300">
+                    <input type="number" 
+                           id="diastolic" 
+                           required 
+                           placeholder="Diastolic"
+                           inputmode="numeric" 
+                           pattern="[0-9]*"
+                           min="0"
+                           max="200">
+                </div>
+                <div class="input-group">
+                    <input type="datetime-local" id="reading-date" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="cancel-btn" class="neomorphic-button cancel">Cancel</button>
+                    <button type="submit" class="neomorphic-button save">Save Reading</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="export-section neomorphic">
+            <div class="export-controls">
+                <div class="date-range">
+                    <div class="date-input-container">
+                        <input type="date" id="start-date" required>
+                        <span class="date-placeholder">mm/dd/yyyy</span>
+                    </div>
+                    <div class="date-input-container">
+                        <input type="date" id="end-date" required>
+                        <span class="date-placeholder">mm/dd/yyyy</span>
+                    </div>
+                </div>
+                <button id="export-csv" class="neomorphic-button export">Export to CSV</button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

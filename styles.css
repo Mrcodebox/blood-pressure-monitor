@@ -1,0 +1,263 @@
+:root {
+    --background-color: #f0f2f5;
+    --shadow-color: #babecc;
+    --text-color: #333333;
+    --heading-color: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-header {
+    margin-bottom: 2em;
+    overflow: visible;
+}
+
+h1, h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    white-space: normal;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.2;
+}
+
+h1.underline {
+    border-bottom: 3px solid #ff4444;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.8em;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.neomorphic {
+    border-radius: 20px;
+    background: var(--background-color);
+    box-shadow: 8px 8px 16px var(--shadow-color),
+                -8px -8px 16px white;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--background-color);
+    box-shadow: inset 5px 5px 10px var(--shadow-color),
+                inset -5px -5px 10px white;
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+
+input[type="number"] {
+    height: 60px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+input[type="date"] {
+    font-size: 1em;
+    padding: 12px;
+}
+
+input::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.neomorphic-button {
+    border: none;
+    outline: none;
+    padding: 16px 28px;
+    border-radius: 12px;
+    background: var(--background-color);
+    box-shadow: 5px 5px 10px var(--shadow-color),
+                -5px -5px 10px white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    min-width: 140px;
+}
+
+.neomorphic-button.save {
+    background: #4CAF50;
+    color: white;
+}
+
+.neomorphic-button.cancel {
+    background: #ff4444;
+    color: white;
+}
+
+.neomorphic-button.export {
+    background: #2196F3;
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neomorphic-button:active {
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.2),
+                inset -5px -5px 10px rgba(255,255,255,0.5);
+}
+
+.export-section {
+    margin-top: 30px;
+}
+
+.export-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-range {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.date-input-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: inset 5px 5px 10px var(--shadow-color),
+                inset -5px -5px 10px white;
+}
+
+.date-range input[type="date"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 1em;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    z-index: 1;
+}
+
+/* Hide default date picker icon */
+.date-range input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Style for the placeholder overlay */
+.date-placeholder {
+    position: absolute;
+    color: var(--text-color);
+    opacity: 0.7;
+    pointer-events: none;
+    font-size: 1em;
+    text-align: center;
+    z-index: 0;
+}
+
+.date-range input[type="date"]:valid + .date-placeholder {
+    display: none;
+}
+
+/* Clear the default placeholder */
+.date-range input[type="date"]::-webkit-datetime-edit-text,
+.date-range input[type="date"]::-webkit-datetime-edit-month-field,
+.date-range input[type="date"]::-webkit-datetime-edit-day-field,
+.date-range input[type="date"]::-webkit-datetime-edit-year-field {
+    color: var(--text-color);
+}
+
+.date-range input[type="date"]:not(:valid)::-webkit-datetime-edit {
+    color: transparent;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 0.8em;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .button-group {
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .neomorphic-button {
+        flex: 1;
+        padding: 16px 20px;
+        font-size: 1em;
+        min-width: 0;
+    }
+
+    .date-range {
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .date-input-container {
+        flex: 1;
+    }
+
+    .export-controls {
+        gap: 10px;
+    }
+}

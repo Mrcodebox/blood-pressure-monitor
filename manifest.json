@@ -1,0 +1,10 @@
+{
+    "name": "Blood Pressure Monitor",
+    "short_name": "BP Monitor",
+    "description": "Track your blood pressure readings",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f0f2f5",
+    "theme_color": "#f0f2f5",
+    "orientation": "portrait"
+}
